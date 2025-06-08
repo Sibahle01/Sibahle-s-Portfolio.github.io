@@ -1,6 +1,6 @@
 .project-card {
   perspective: 1500px;
-  height: 400px;
+  /* height: 400px; */
 }
 
 .card-inner {

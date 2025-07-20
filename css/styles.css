@@ -1757,6 +1757,7 @@ footer {
     color: var(--text-dark);
 }
 
+
 /* Work Experience Section */
 .work-experience {
     padding: 80px 0;
@@ -1807,6 +1808,15 @@ footer {
     font-size: 1.75rem;
 }
 
+.experience-details h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--primary-brown);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
 .experience-details .duration {
     font-style: italic;
     color: var(--dark-brown);
@@ -1818,12 +1828,26 @@ footer {
     color: var(--text-dark);
     font-size: 1rem;
     list-style-type: disc;
+    margin-bottom: 1.5rem;
 }
 
 .experience-details ul li {
     margin-bottom: 0.6rem;
 }
 
+.experience-details .tools {
+    background: var(--cream);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    border-left: 4px solid var(--primary-brown);
+}
+
+.experience-details .tools strong {
+    color: var(--primary-brown);
+}
 
 /* YouTube Page */
 .youtube-hero {

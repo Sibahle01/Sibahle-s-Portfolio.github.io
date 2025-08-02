@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/animations.css" rel="stylesheet">
+    <link href="css/chatbot.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -42,7 +43,7 @@
                 <p class="fade-in delay-2">
                     Tech educator and data enthusiast skilled in SQL, Python, and data integration. Experienced in building end-to-end ETL pipelines and transforming raw data into actionable insights. Passionate about using data to solve real-world problems and teach others along the way.
                 </p>
-                <div class="cta-buttons fade-in delay-3"style="Display:None;">
+                <div class="cta-buttons fade-in delay-3" style="display:none;">
                     <a href="projects.html" class="btn btn-primary">View Projects</a>
                     <a href="contact.html" class="btn btn-secondary">Contact Me</a>
                 </div>
@@ -81,18 +82,18 @@
                 <div class="about-text">
                     <h2>About Me</h2>
                     <p>
-                        I’m a final-year Bachelor of ICT student at Durban University of Technology, passionate about data 
+                        I'm a final-year Bachelor of ICT student at Durban University of Technology, passionate about data 
                         integration and tech education. My journey in technology has led me to develop hands-on experience 
                         in SQL programming, ETL pipelines, and data visualization.
                     </p>
                     <p>
-                        I’m also the creator of Journey to Data, an educational platform where I teach Python, SQL, Power BI,
+                        I'm also the creator of Journey to Data, an educational platform where I teach Python, SQL, Power BI,
                         and data science fundamentals to a growing audience across YouTube and TikTok.
                     </p>
                     <p>
                         I believe in making complex technical concepts simple and accessible not just for myself, but for 
-                        anyone eager to learn. Whether I’m building data projects or breaking down algorithms in videos, 
-                        I’m driven by a single mission: help others grow through data.
+                        anyone eager to learn. Whether I'm building data projects or breaking down algorithms in videos, 
+                        I'm driven by a single mission: help others grow through data.
                     </p>
                 </div>
                 <div class="about-image">
@@ -103,6 +104,62 @@
             </div>
         </div>
     </section>
+
+    <!-- FLOATING CHAT LAUNCHER BUTTON -->
+    <div class="chat-launcher" id="chatLauncher" onclick="toggleChatWidget()">
+        💬
+        <div class="chat-notification" id="chatNotification">1</div>
+    </div>
+
+    <!-- CHATBOT WIDGET CONTAINER -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <div>
+                <div class="chatbot-title">Ask About Sibahle</div>
+                <div class="chatbot-subtitle">Professional Assistant</div>
+            </div>
+            <button class="minimize-btn" id="minimizeBtn" onclick="minimizeChatbot()">−</button>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-bubble">
+                    Hello! I'm here to provide detailed information about Sibahle Sithole's professional background, technical expertise, and project experience. How may I assist you today?
+                </div>
+                <div class="message-time"></div>
+            </div>
+            
+            <!-- Quick action buttons -->
+            <div class="quick-actions">
+                <button class="quick-btn" onclick="askQuestion('Tell me about your skills')">Skills</button>
+                <button class="quick-btn" onclick="askQuestion('What is your experience?')">Experience</button>
+                <button class="quick-btn" onclick="askQuestion('Show me your projects')">Projects</button>
+                <button class="quick-btn" onclick="askQuestion('Contact information')">Contact</button>
+            </div>
+        </div>
+        
+        <!-- Typing indicator -->
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+        
+        <div class="chat-input-area">
+            <div class="input-container">
+                <input type="text" 
+                       class="chat-input" 
+                       id="chatInput" 
+                       placeholder="Ask about skills, experience, projects..."
+                       onkeypress="handleKeyPress(event)">
+                <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                    ➤
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -142,5 +199,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/particles.js"></script>
+    <script src="js/chatbot.js"></script>
 </body>
 </html>
